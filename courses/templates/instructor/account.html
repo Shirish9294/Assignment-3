@@ -1,0 +1,27 @@
+{% extends 'courses/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>Account Details</h2>
+    <br>
+    <p><b>User Name: </b>{{ user }}</p>
+    <p><b>First Name: </b>{{ user.first_name }}</p>
+    <p><b>Last Name: </b>{{ user.last_name }}</p>
+    <p><b>Email: </b>{{ user.email }}</p>
+    <p><b>Address: </b>{{ instructor.address }}</p>
+    <p><b>City: </b>{{ instructor.city }}</p>
+    <p><b>State: </b>{{ instructor.state }}</p>
+    <p><b>Zipcode: </b>{{ instructor.zipcode }}</p>
+    <p><b>Phone No: </b>{{ instructor.phone }}</p>
+</div>
+<button type="submit" class="btn btn-primary"><a href="{% url 'instructor:instructor_edit' %}" style="color: white;">Edit</a></button>
+<button type="submit" class="btn btn-primary"><a href="{% url 'instructor:password_change' %}" style="color: white;">Change Password</a></button>
+</body>
+</html>
+{% endblock %}
