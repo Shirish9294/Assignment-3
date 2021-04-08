@@ -45,7 +45,7 @@ class Courses(models.Model):
     instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
     department = models.CharField(max_length=30, choices=choice, null=False)
     course_name = models.CharField(max_length=50, blank=False)
-    description = models.CharField(max_length=50, blank=True)
+    description = models.TextField(blank = True)
     location = models.CharField(max_length=50, blank=False, choices=[('online', 'ONLINE'), ('remote', 'REMOTE')])
     start_date = models.DateField(default=timezone.now, blank=True, null=True)
     end_date = models.DateField(default=timezone.now, blank=True, null=True)
