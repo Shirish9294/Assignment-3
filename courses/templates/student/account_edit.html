@@ -2,15 +2,16 @@
 {% load crispy_forms_filters %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <h1>Update Account details</h1>
+    <br>
+    <h2>Update Account details</h2>
     <form method="post">
         {% csrf_token %}
         <div class="form-row">
-            <div class="form-group col-md-6 mb-0">
+            <div class="form-group col-md-4 mb-0">
                 {{ user_form | crispy}}
                 {{ student_form | crispy}}
                 <br>
-                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="submit" class="btn btn-secondary">Update</button>
             </div>
         </div>
     </form>

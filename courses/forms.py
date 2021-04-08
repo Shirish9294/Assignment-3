@@ -2,8 +2,8 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
 from django.forms.utils import ValidationError
-
-from courses.models import (User, Instructor, Student)
+from django.forms.widgets import DateInput
+from courses.models import *
 
 
 class InstructorSignUpForm(UserCreationForm):
@@ -47,5 +47,21 @@ class StudentForm(forms.ModelForm):
 
 class InstructorForm(forms.ModelForm):
     class Meta:
-        model = Student
+        model = Instructor
         fields = ('address', 'city', 'state', 'zipcode', 'phone')
+
+
+class CourseForm(forms.ModelForm):
+    class Meta:
+        model = Courses
+        fields = ('course_name', 'department', 'description', 'location', 'start_date', 'end_date')
+        widgets = {
+            'start_date': DateInput(attrs={'type': 'date'}),
+            'end_date': DateInput(attrs={'type': 'date'}),
+        }
+
+
+class EnrollForm(forms.ModelForm):
+    class Meta:
+        model = Enrollment
+        fields = ()

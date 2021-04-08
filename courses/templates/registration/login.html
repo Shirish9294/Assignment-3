@@ -4,13 +4,15 @@
 {% block content %}
   <div class="row">
     <div class="col-lg-4 col-md-6 col-sm-8 col-12">
+        <br>
       <h2>Log in</h2>
       <form method="post" novalidate>
         {% csrf_token %}
         <input type="hidden" name="next" value="{{ next }}">
         {{ form.username|as_crispy_field }}
         {{ form.password|as_crispy_field }}
-        <button type="submit" class="btn btn-primary">Log in</button>
+        <button type="submit" class="btn btn-secondary">Log in</button>
+         <p ><br><a href="{% url "password_reset" %}" style="font-size: 25px;">Forgotten your password?</a></p>
       </form>
     </div>
   </div>

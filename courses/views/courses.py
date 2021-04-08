@@ -13,3 +13,7 @@ def home(request):
         elif request.user.is_student:
             return redirect('student:student_home')
     return render(request, 'courses/home.html')
+
+
+def signup(request):
+    return render(request, 'registration/signup.html')

@@ -8,6 +8,7 @@
 </head>
 <body>
 <div>
+    <br>
     <h2>Account Details</h2>
     <br>
     <p><b>User Name: </b>{{ user }}</p>
@@ -20,8 +21,8 @@
     <p><b>Zipcode: </b>{{ student.zipcode }}</p>
     <p><b>Phone No: </b>{{ student.phone }}</p>
 </div>
-<button type="submit" class="btn btn-primary"><a href="{% url 'student:student_edit' %}" style="color: white;">Edit</a></button>
-<button type="submit" class="btn btn-primary"><a href="{% url 'student:password_change' %}" style="color: white;">Change Password</a></button>
+<button type="submit" class="btn btn-secondary"><a href="{% url 'student:student_edit' %}" style="color: white;">Edit</a></button>
+<button type="submit" class="btn btn-secondary"><a href="{% url 'student:password_change' %}" style="color: white;">Change Password</a></button>
 </body>
 </html>
 {% endblock %}

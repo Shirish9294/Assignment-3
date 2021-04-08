@@ -1,15 +1,17 @@
 {% extends 'courses/base.html' %}
 {% load crispy_forms_filters %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 {% load crispy_forms_tags %}
 {% block content %}
     <br>
-    <h2>Update Account details</h2>
+    <h2>Edit Course</h2>
+    <br>
     <form method="post">
         {% csrf_token %}
         <div class="form-row">
-            <div class="form-group col-md-6 mb-0">
-                {{ user_form | crispy}}
-                {{ instructor_form | crispy}}
+            <div class="form-group col-md-4 mb-0">
+                {{ form | crispy }}
                 <br>
                 <button type="submit" class="btn btn-secondary">Update</button>
             </div>

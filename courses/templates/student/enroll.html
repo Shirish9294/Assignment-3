@@ -1,0 +1,9 @@
+{% extends 'courses/base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <br>
+    <h1>Course {{ courses.course_name }} enrolled Successfully</h1>
+    <br>
+    <button type="submit" class="btn btn-secondary"><a href="{% url 'student:course_list' %}" style="color: white;">Back</a></button>
+{% endblock %}

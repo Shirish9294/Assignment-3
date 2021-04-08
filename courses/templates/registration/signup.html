@@ -1,8 +1,8 @@
 {% extends 'courses/base.html' %}
-
 {% block content %}
+    <br>
   <h2>Sign up an account</h2>
   <p class="lead">Select below the type of account you want to create</p>
-  <a href="{% url 'signup:instructor_signup' %}" class="btn btn-instructor btn-lg" role="button">Add instructor</a>
-  <a href="{% url 'signup:student_signup' %}" class="btn btn-student btn-lg" role="button">Add student</a>
+    <button type="button" class="btn btn-secondary"><a href="{% url 'signup:instructor_signup' %}" class="btn btn-instructor btn-lg">Sign Up as instructor</a></button>
+    <button type="button" class="btn btn-secondary"><a href="{% url 'signup:student_signup' %}" class="btn btn-student btn-lg">Sign Up as student</a></button>
 {% endblock %}

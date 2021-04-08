@@ -23,12 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'yd2gyy1o4yb!g2ku0blezwc0+l9w#(k#lix4+8j(mmb&c*_#0$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 AUTH_USER_MODEL = 'courses.User'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Application definition
 
 INSTALLED_APPS = [
@@ -123,9 +124,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = 'courses.User'
-
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 
 LOGOUT_REDIRECT_URL = 'home'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'shirish.u94@gmail.com'
+EMAIL_HOST_PASSWORD = 'zbifwzsmxslqjbcv'
+EMAIL_PORT = '587'
+EMAIL_USE_TLS = True

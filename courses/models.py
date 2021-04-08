@@ -33,24 +33,23 @@ class Student(models.Model):
         return self.user.username
 
 
-class Department(models.Model):
-    name = models.CharField(max_length=200, db_index=True)
-
-    def __str__(self):
-        return str(self.name)
+choice = (
+    ('programming', 'PROGRAMMING'),
+    ('electronics', 'ELECTRONICS'),
+    ('business management', 'BUSINESS MANAGEMENT'),
+    ('cyber security', 'CYBER SECURITY'),
+)
 
 
 class Courses(models.Model):
-    Instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
-    Department = models.ForeignKey(Department, on_delete=models.CASCADE)
+    instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
+    department = models.CharField(max_length=30, choices=choice, null=False)
     course_name = models.CharField(max_length=50, blank=False)
     description = models.CharField(max_length=50, blank=True)
     location = models.CharField(max_length=50, blank=False, choices=[('online', 'ONLINE'), ('remote', 'REMOTE')])
     start_date = models.DateField(default=timezone.now, blank=True, null=True)
     end_date = models.DateField(default=timezone.now, blank=True, null=True)
-    seat_limit = models.CharField(blank=True, max_length=20)
-    seat_enrolled = models.CharField(blank=True, max_length=20)
-    seat_available = models.CharField(blank=True, max_length=20)
+    created_date = models.DateField(default=timezone.now)
 
     def __str__(self):
         return self.course_name
